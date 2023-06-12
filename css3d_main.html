@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pattern Graphic Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="main.css">
+
+	<style>
+		a {
+			color: #8ff;
+
+		}
+
+		#menu {
+			position: absolute;
+			top: 40px;
+			width: 100%;
+
+			text-align: center;
+
+		}
+
+		#menu2 {
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+			text-align: center;
+
+		}
+
+
+		.element {
+			width: 685px;
+			height: 1039px;
+			/*box-shadow: 0px 0px 30px rgba(0,255,255,0.5);*/
+			border: 1px solid rgba(127, 255, 255, 0.25);
+			font-family: Helvetica, sans-serif;
+			text-align: center;
+			line-height: normal;
+			cursor: default;
+			border-radius: 5%;
+
+		}
+
+		.element:hover {
+			box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.75);
+			border: 1px solid rgba(127, 255, 255, 0.75);
+		}
+
+		.element .number {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			font-size: 12px;
+			color: rgba(127, 255, 255, 0.75);
+		}
+
+		.element .symbol {
+			position: absolute;
+			top: 40px;
+			left: 0px;
+			right: 0px;
+			font-size: 60px;
+			font-weight: bold;
+			color: rgba(255, 255, 255, 0.75);
+			text-shadow: 0 0 10px rgba(0, 255, 255, 0.95);
+		}
+
+		.element .details {
+			position: absolute;
+			bottom: 15px;
+			left: 0px;
+			right: 0px;
+			font-size: 12px;
+			color: rgba(127, 255, 255, 0.75);
+		}
+
+		button {
+			color: rgba(127, 255, 255, 0.75);
+			background: transparent;
+			outline: 1px solid rgba(127, 255, 255, 0.75);
+			border: 0px;
+			padding: 5px 10px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: rgba(0, 255, 255, 0.5);
+		}
+
+		button:active {
+			color: #000000;
+			background-color: rgba(0, 255, 255, 0.75);
+		}
+	</style>
+</head>
+
+<body>
+
+	<!--<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">2023 SSWU GRADUATION E-EXHIBITION</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mx-auto">
+						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="surface.html">Surface</a></li>
+						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
+						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="woven.html">Woven</a></li>
+						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="examples/css3d_periodictable copy.html">css</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>-->
+
+
+
+	<div id="info">Pattern Graphic Design</div>
+	<div id="container"></div>
+	<div id="menu">
+		<button id="table">Original</button>
+		<button id="sphere">SPHERE</button>
+		<button id="helix">HELIX</button>
+		<!--<button id="grid">V3-GRID</button>-->
+		<button id="dia">Dia</button>
+		<button id="gradient">Gradient</button>
+
+
+	</div>
+	<div id="menu2">
+		<button id="v3"><a href="index.html">HOME</a></button>
+
+	</div>
+
+	<!-- Import maps polyfill -->
+	<!-- Remove this when import maps will be widely supported -->
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+	<script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+
+	<script type="module">
+
+		import * as THREE from 'three';
+
+		import { TWEEN } from 'three/addons/libs/tween.module.min.js';
+		import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
+		import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+
+		const table = [
+			'', '', '', 1, 1,
+			'', '', '', 2, 1,
+			'', '', '', 3, 1,
+			'', '', '', 4, 1,
+			'', '', '', 5, 1,
+			'', '', '', 6, 1,
+			'', '', '', 7, 1,
+			'', '', '', 1.5, 2,
+			'', '', '', 2.5, 2,
+			'', '', '', 3.5, 2,
+			'', '', '', 4.5, 2,
+			'', '', '', 5.5, 2,
+			'', '', '', 6.5, 2,
+			'', '', '', 2, 3,
+			'', '', '', 3, 3,
+			'', '', '', 4, 3,
+			'', '', '', 5, 3,
+			'', '', '', 6, 3,
+			'', '', '', 3, 4,
+			'', '', '', 4, 4,
+			'', '', '', 5, 4,
+			'', '', '', 4, 5
+
+
+		];
+
+
+		let camera, scene, renderer;
+		let controls;
+
+		const objects = [];
+		const targets = { table: [], sphere: [], helix: [], grid: [], dia: [], gradient: [] };
+
+		init();
+		animate();
+
+		function init() {
+
+
+			camera = new THREE.PerspectiveCamera(2970, window.innerWidth / window.innerHeight, 1, 100);
+			camera.position.z = 3500;
+
+			scene = new THREE.Scene();
+
+
+			// table
+
+			for (let i = 0; i < table.length; i += 5) {
+
+
+
+
+				const element = document.createElement('div');
+				element.className = 'element';
+				element.style.backgroundColor = 'rgba(0,140,127,' + (Math.random() * 0.5 + 0.25) + ')';
+
+
+				const number = document.createElement('div');
+				number.className = 'number';
+				number.textContent = (i / 5) + 1;
+				element.appendChild(number);
+
+				const symbol = document.createElement('div');
+				symbol.className = 'symbol';
+				symbol.textContent = table[i];
+				element.appendChild(symbol);
+
+				const details = document.createElement('div');
+				details.className = 'details';
+				details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
+				element.appendChild(details);
+
+
+
+
+				const objectCSS = new CSS3DObject(element, document.createElement('div'));
+				//objectCSS.position.x = Math.random() * 4000 - 2000; //아 이게 처음 로드할때 카드가 나타나는 위치
+				//objectCSS.position.y = Math.random() * 4000 - 2000; //다 지우면 한곳에서 촤르륵 풀어주는 느낌임
+				//objectCSS.position.z = Math.random() * 4000 - 2000;
+				objectCSS.element.style.backgroundImage = 'url("textures/water.jpg")'
+
+				if (i == 0) {
+					objectCSS.element.style.backgroundImage = 'url("textures/1.png")';
+
+				}
+				if (i == 5) {
+					objectCSS.element.style.backgroundImage = 'url("textures/2.png")';
+				}
+				if (i == 10) {
+					objectCSS.element.style.backgroundImage = 'url("textures/3.png")';
+				}
+				if (i == 15) {
+					objectCSS.element.style.backgroundImage = 'url("textures/4.png")';
+				}
+				if (i == 20) {
+					objectCSS.element.style.backgroundImage = 'url("textures/5.png")';
+				}
+				if (i == 25) {
+					objectCSS.element.style.backgroundImage = 'url("textures/6.png")';
+				}
+				if (i == 30) {
+					objectCSS.element.style.backgroundImage = 'url("textures/7.png")';
+				}
+				if (i == 35) {
+					objectCSS.element.style.backgroundImage = 'url("textures/8.png")';
+				}
+				if (i == 40) {
+					objectCSS.element.style.backgroundImage = 'url("textures/9.png")';
+				}
+				if (i == 45) {
+					objectCSS.element.style.backgroundImage = 'url("textures/10.png")';
+				}
+				if (i == 50) {
+					objectCSS.element.style.backgroundImage = 'url("textures/11.png")';
+				}
+				if (i == 55) {
+					objectCSS.element.style.backgroundImage = 'url("textures/12.png")';
+				}
+				if (i == 60) {
+					objectCSS.element.style.backgroundImage = 'url("textures/13.png")';
+				}
+				if (i == 65) {
+					objectCSS.element.style.backgroundImage = 'url("textures/14.png")';
+				}
+				if (i == 70) {
+					objectCSS.element.style.backgroundImage = 'url("textures/15.png")';
+				}
+				if (i == 75) {
+					objectCSS.element.style.backgroundImage = 'url("textures/16.png")';
+				}
+				if (i == 80) {
+					objectCSS.element.style.backgroundImage = 'url("textures/17.png")';
+				}
+				if (i == 85) {
+					objectCSS.element.style.backgroundImage = 'url("textures/18.png")';
+				}
+				if (i == 90) {
+					objectCSS.element.style.backgroundImage = 'url("textures/19.png")';
+				}
+				if (i == 95) {
+					objectCSS.element.style.backgroundImage = 'url("textures/20.png")';
+				}
+				if (i == 100) {
+					objectCSS.element.style.backgroundImage = 'url("textures/21.png")';
+				}
+				if (i == 105) {
+					objectCSS.element.style.backgroundImage = 'url("textures/22.png")';
+				}
+
+				//코드가이게맞나... 너무더러움
+
+				//objectCSS.element.style.backgroundImage = 'url("textures/tarot_back.jpg")'
+
+				scene.add(objectCSS);
+
+				objects.push(objectCSS);
+
+				//
+
+
+				const object = new THREE.Object3D();
+
+				object.position.x = (table[i + 3] * 800) - 3200; // - 부분 가로줄 위치
+				object.position.y = - (table[i + 4] * 1200) + 3500; // - 부분 세로줄 위치
+
+				targets.table.push(object);
+
+			}
+
+
+
+			// sphere
+
+			const vector = new THREE.Vector3();
+
+			for (let i = 0, l = objects.length; i < l; i++) {
+
+
+				const phi = Math.acos(- 1 + (2 * i) / l);
+				const theta = Math.sqrt(l * Math.PI) * phi;
+
+				const object = new THREE.Object3D();
+
+				object.position.setFromSphericalCoords(1500, phi, theta); //원 크기
+
+				vector.copy(object.position).multiplyScalar(2);
+
+				object.lookAt(vector);
+
+
+				targets.sphere.push(object);
+
+
+
+			}
+
+			// helix
+
+			for (let i = 0, l = objects.length; i < l; i++) {
+
+				const theta = i * 0.4 + Math.PI; //꼬이는 정도
+				const y = - (i * 140) + 1450; //i 곱하는게 꼬이는 넓이
+
+				const object = new THREE.Object3D();
+
+				object.position.setFromCylindricalCoords(1670, theta, y); //숫자는 간격
+
+				vector.x = object.position.x * 2; //꺾이는 정도?
+				vector.y = object.position.y; //안쪽으로 수그리는 정도
+				vector.z = object.position.z * 2; //한쪽방향 정렬?
+
+				object.lookAt(vector);
+
+				targets.helix.push(object);
+
+
+			}
+
+			// grid
+
+			for (let i = 0; i < objects.length; i++) {
+
+				const object = new THREE.Object3D();
+
+				object.position.x = ((i % 5) * 400) - 800;
+				object.position.y = (- (Math.floor(i / 5) % 5) * 400) + 800;
+				object.position.z = (Math.floor(i / 25)) * 1000 - 2000;
+
+				targets.grid.push(object);
+
+			}
+
+			//
+
+			//dia
+			for (let i = 0; i < 300; i++) {
+				const layer = (i % 3);
+				const object = new THREE.Object3D();
+
+
+				if (i == 0) {
+					object.position.y = 3000 - 1100;
+				}
+				if (i == 1) {
+					object.position.x = 685;
+					object.position.y = 2481 - 1100;
+				}
+				if (i == 2) {
+					object.position.x = 1370;
+					object.position.y = 1962 - 1100;
+				}
+				if (i == 3) {
+					object.position.x = 2055;
+					object.position.y = 1443 - 1100;
+				}
+				if (i == 4) {
+					object.position.x = 2055;
+					object.position.y = 405 - 1100;
+				}
+				if (i == 5) {
+					object.position.x = 1370;
+					object.position.y = -114 - 1100;
+				}
+				if (i == 6) {
+					object.position.x = 685;
+					object.position.y = -633 - 1100;
+				}
+				if (i == 7) {
+					object.position.y = -1152 - 1100;
+				}
+				if (i == 8) {
+					object.position.x = -685;
+					object.position.y = -633 - 1100;
+				}
+				if (i == 9) {
+					object.position.x = -1370;
+					object.position.y = -114 - 1100;
+				}
+				if (i == 10) {
+					object.position.x = -2055;
+					object.position.y = 405 - 1100;
+				}
+				if (i == 11) {
+					object.position.x = -2055;
+					object.position.y = 1443 - 1100;
+				}
+				if (i == 12) {
+					object.position.x = -1370;
+					object.position.y = 1962 - 1100;
+				}
+				if (i == 13) {
+					object.position.x = -685;
+					object.position.y = 2481 - 1100;
+				}
+				if (i == 14) {
+					object.position.y = 1961 - 1100;
+				}
+				if (i == 15) {
+					object.position.x = 685;
+					object.position.y = 1442 - 1100;
+				}
+				if (i == 16) {
+					object.position.x = 1370;
+					object.position.y = 923 - 1100;
+				}
+				if (i == 17) {
+					object.position.x = 685;
+					object.position.y = 404 - 1100;
+				}
+				if (i == 18) {
+
+					object.position.y = -115 - 1100;
+				}
+				if (i == 19) {
+					object.position.x = -685;
+					object.position.y = 404 - 1100;
+				}
+				if (i == 20) {
+					object.position.x = -1370;
+					object.position.y = 923 - 1100;
+				}
+				if (i == 21) {
+					object.position.x = -685;
+					object.position.y = 1442 - 1100;
+				}
+
+				targets.dia.push(object);
+			}
+
+			//b
+			for (let i = 0; i < 300; i++) {
+				const layer = (i % 3);
+				const object = new THREE.Object3D();
+
+
+				if (i == 0) {
+					object.position.x = -1142;
+					object.position.y = -1099;
+					object.position.z = 0;
+				}
+				if (i == 1) {
+					object.position.x = 0;
+					object.position.y = -1619;
+					object.position.z = 5;
+				}
+				if (i == 2) {
+					object.position.x = -1369;
+					object.position.y = -60;
+					object.position.z = 0;
+				}
+				if (i == 3) {
+					object.position.x = 456;
+					object.position.y = -1359;
+					object.position.z = -10;
+				}
+				if (i == 4) {
+					object.position.x = -457;
+					object.position.y = 721;
+					object.position.z = -10;
+				}
+				if (i == 5) {
+					object.position.x = 228;
+					object.position.y = -1099;
+					object.position.z = -5;
+				}
+				if (i == 6) {
+					object.position.x = 0;
+					object.position.y = -320;
+					object.position.z = -10;
+				}
+				if (i == 7) {
+					object.position.x = 685;
+					object.position.y = -580;
+					object.position.z = 5;
+				}
+				if (i == 8) {
+					object.position.x = 1141;
+					object.position.y = -1099;
+					object.position.z = 10;
+				}
+				if (i == 9) {
+					object.position.x = 456;
+					object.position.y = 200;
+					object.position.z = -10;
+
+				}
+				if (i == 10) {
+					object.position.x = -685;
+					object.position.y = 461;
+					object.position.z = -5;
+				}
+				if (i == 11) {
+					object.position.x = -456;
+					object.position.y = -60;
+				}
+				if (i == 12) {
+					object.position.x = 0;
+					object.position.y = 200;
+					object.position.z = 5;
+				}
+				if (i == 13) {
+					object.position.x = -1142;
+					object.position.y = 980;
+					object.position.z = 10;
+				}
+				if (i == 14) {
+					object.position.x = 228;
+					object.position.y = 980;
+					object.position.z = 10;
+				}
+				if (i == 15) {
+					object.position.x = 684;
+					object.position.y = 720;
+					object.position.z = 0;
+				}
+				if (i == 16) {
+					object.position.x = -912;
+					object.position.y = -320;
+				}
+				if (i == 17) {
+					object.position.x = -457;
+					object.position.y = -1359;
+					object.position.z = 10;
+				}
+				if (i == 18) {
+					object.position.x = -1597;
+					object.position.y = -580;
+					object.position.z = 10;
+				}
+				if (i == 19) {
+					object.position.x = 1141;
+					object.position.y = 980;
+					object.position.z = 10;
+				}
+				if (i == 20) {
+					object.position.x = -457;
+					object.position.y = 1760;
+					object.position.z = 10;
+				}
+				if (i == 21) {
+					object.position.x = 1369;
+					object.position.y = -319;
+					object.position.z = 5;
+				}
+
+
+				targets.gradient.push(object);
+
+			}
+
+
+
+
+
+
+
+
+			renderer = new CSS3DRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.getElementById('container').appendChild(renderer.domElement);
+
+			//
+
+			controls = new TrackballControls(camera, renderer.domElement);
+			controls.minDistance = 500;
+			controls.maxDistance = 6000;
+			controls.addEventListener('change', render);
+
+			const buttonTable = document.getElementById('table');
+			buttonTable.addEventListener('click', function () {
+
+				transform(targets.table, 2000);
+
+			});
+
+			const buttonSphere = document.getElementById('sphere');
+			buttonSphere.addEventListener('click', function () {
+
+				transform(targets.sphere, 2000);
+
+			});
+
+			const buttonHelix = document.getElementById('helix');
+			buttonHelix.addEventListener('click', function () {
+
+				transform(targets.helix, 2000);
+
+			});
+
+			const buttonGrid = document.getElementById('grid');
+			buttonGrid.addEventListener('click', function () {
+
+				transform(targets.grid, 2000);
+
+			});
+			const buttonDia = document.getElementById('dia');
+			buttonDia.addEventListener('click', function () {
+
+				transform(targets.dia, 2000);
+
+			});
+			const buttonGradient = document.getElementById('gradient');
+			buttonGradient.addEventListener('click', function () {
+
+				transform(targets.gradient, 2000);
+
+			});
+
+
+
+			transform(targets.table, 2000);
+
+			//
+
+			window.addEventListener('resize', onWindowResize);
+
+		}
+
+		function transform(targets, duration) {
+
+			TWEEN.removeAll();
+
+			for (let i = 0; i < objects.length; i++) {
+
+				const object = objects[i];
+				const target = targets[i];
+
+				new TWEEN.Tween(object.position)
+					.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
+					.easing(TWEEN.Easing.Exponential.InOut)
+					.start();
+
+				new TWEEN.Tween(object.rotation)
+					.to({ x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration)
+					.easing(TWEEN.Easing.Exponential.InOut)
+					.start();
+
+			}
+
+			new TWEEN.Tween(this)
+				.to({}, duration * 2)
+				.onUpdate(render)
+				.start();
+
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+			render();
+
+		}
+
+		function animate() {
+
+			requestAnimationFrame(animate);
+
+			TWEEN.update();
+
+			controls.update();
+
+		}
+
+		function render() {
+
+			renderer.render(scene, camera);
+
+		}
+
+	</script>
+</body>
+
+</html>

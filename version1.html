@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pattern Graphic Design</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<link href="css/styles.css" rel="stylesheet" />
+		<style>
+			a {
+				color: #8ff;
+				
+			}
+
+			#menu {
+				position: absolute;
+				top: 40px;
+				width: 100%;
+				
+				text-align: center;
+
+			}
+			#menu2 {
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				text-align: center;
+
+			}
+
+
+			.element {
+				width: 685px;
+				height: 1031px;
+				/*box-shadow: 0px 0px 30px rgba(0,255,255,0.5);*/
+				/*border: 1px solid rgba(127,255,255,0.25);*/
+				text-align: center;
+				line-height: normal;
+				cursor: default;
+			
+			}
+
+			.element:hover {
+				box-shadow: 0px 0px 30px rgba(0,255,255,0.75);
+				border: 1px solid rgba(127,255,255,0.75);
+			}
+
+
+
+			button {
+				color: rgba(127,255,255,0.75);
+				background: transparent;
+				outline: 1px solid rgba(127,255,255,0.75);
+				border: 0px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background-color: rgba(0,255,255,0.5);
+			}
+
+			button:active {
+				color: #000000;
+				background-color: rgba(0,255,255,0.75);
+			}
+		</style>
+	</head>
+	<body>
+
+
+		<div id="info">Pattern Graphic Design</div>
+		<div id="container"></div>
+		<div id="menu">
+			<button id="table">Original</button>
+			<button id="sphere">Mix</button>
+			<button id="helix">Transverse</button>
+			<button id="grid">diagonal</button>
+			<button id="dia">Mix</button>
+			<button id="gradient">Mix</button>
+
+			
+		</div>
+		<div id="menu2">
+			<button id="home"><a href="index.html" copy.html>Home</a></button>
+	
+			
+		</div>
+
+		<!-- Import maps polyfill -->
+		<!-- Remove this when import maps will be widely supported -->
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "../build/three.module.js",
+					"three/addons/": "./jsm/"
+				}
+			}
+		</script>
+
+		<script type="module">
+
+			import * as THREE from 'three';
+
+			import { TWEEN } from 'three/addons/libs/tween.module.min.js';
+			import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
+			import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+
+			const table = [
+				'','','', 1, 1,
+				'','','', 2,1,
+				'','','', 3,1,
+				'','','', 4,1,
+				'','','', 5,1,
+				'','','', 6,1,
+				'','','', 7,1,
+				'','','', 1,2,
+				'','','', 2,2,
+				'','','', 3,2,
+				'','','', 4,2,
+				'','','', 5,2,
+				'','','', 6,2,
+				'','','', 7,2,
+				'','','', 1,3,
+				'','','', 2,3,
+				'','','', 3,3,
+				'','','', 4,3,
+				'','','', 5,3,
+				'','','', 6,3,
+				'','','', 7,3
+			
+			
+			];
+
+
+			let camera, scene, renderer;
+			let controls;
+
+			const objects = [];
+			const targets = { table: [], sphere: [], helix: [], grid: [], dia: [], gradient:[]};
+
+			init();
+			animate();
+
+			function init() {
+
+				
+				camera = new THREE.PerspectiveCamera( 2970, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.z = 2000;
+				
+				scene = new THREE.Scene();
+				
+
+				// table
+
+				for ( let i = 0; i < table.length; i += 5 ) {
+
+
+
+					const element = document.createElement( 'div' );
+					element.className = 'element';
+					
+
+					const objectCSS = new CSS3DObject( element,document.createElement( 'div' ) );
+					//objectCSS.position.x = Math.random() * 4000 - 2000; //아 이게 처음 로드할때 카드가 나타나는 위치
+					//objectCSS.position.y = Math.random() * 4000 - 2000; //다 지우면 한곳에서 촤르륵 풀어주는 느낌임
+					//objectCSS.position.z = Math.random() * 4000 - 2000;
+					objectCSS.element.style.backgroundImage = 'url("textures/water.jpg")'
+					
+					if(i==0){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_1.png")';
+						
+					}
+					if(i==5){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_2.png")';
+					}
+					if(i==10){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_3.png")';
+					}
+					if(i==15){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_4.png")';
+					}
+					if(i==20){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_5.png")';
+					}
+					if(i==25){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_6.png")';
+					}
+					if(i==30){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_7.png")';
+					}
+					if(i==35){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_8.png")';
+					}
+					if(i==40){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_9.png")';
+					}
+					if(i==45){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_10.png")';
+					}
+					if(i==50){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_11.png")';
+					}
+					if(i==55){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_12.png")';
+					}
+					if(i==60){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_13.png")';
+					}
+					if(i==65){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_14.png")';
+					}
+					if(i==70){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_15.png")';
+					}
+					if(i==75){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_16.png")';
+					}
+					if(i==80){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_17.png")';
+					}
+					if(i==85){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_18.png")';
+					}
+					if(i==90){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_19.png")';
+					}
+					if(i==95){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_20.png")';
+					}
+					if(i==100){
+						objectCSS.element.style.backgroundImage = 'url("texturesv1/v1_21.png")';
+					}
+					
+
+					//코드가이게맞나... 너무더러움
+
+					//objectCSS.element.style.backgroundImage = 'url("textures/tarot_back.jpg")'
+
+					scene.add( objectCSS );
+
+					objects.push( objectCSS );
+
+					//
+			
+
+					const object = new THREE.Object3D();
+				
+					object.position.x = ( table[ i + 3 ] * 685 ) - 2740; // - 부분 가로줄 위치
+					object.position.y = - ( table[ i + 4 ] * 1031 ) + 2000; // - 부분 세로줄 위치
+
+					targets.table.push( object );
+
+				}
+
+				
+
+				// sphere
+
+				const vector = new THREE.Vector3();
+
+				for ( let i = 0; i < objects.length; i ++ ) {
+
+					const object = new THREE.Object3D();
+					
+
+					object.position.x = ( ( Math.floor( i *3 ) %7* 685 ) -2080) ;
+					object.position.y = ( ( Math.floor( i  ) % 3 * 1031 )-1100 );
+										
+
+					targets.sphere.push( object );
+					
+					
+
+				}
+				
+				// helix
+
+				for ( let i = 0; i < objects.length; i ++ ) {
+
+					const object = new THREE.Object3D();
+					
+
+					object.position.x = (  ( Math.floor( i  ) %7* 685 ) -2080) ;
+					object.position.y = (  ( Math.floor( i  ) % 3 * 1031 )-1100 );
+
+					targets.helix.push( object );
+					
+					
+				}
+
+				// grid
+
+				for ( let i = 0; i < objects.length; i ++ ) {
+
+					const object = new THREE.Object3D();
+					
+					object.position.x = (  - ( Math.floor( i  ) %7* 685 ) ) +2040;
+					object.position.y = ( - ( Math.floor( i  ) % 3 * 1031 ) ) + 930;
+
+					targets.grid.push( object );
+
+				}
+
+				//
+
+				//dia
+				for ( let i = 0; i < 21; i ++ ) {
+					
+					const object = new THREE.Object3D();
+				
+
+					if(i==0){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =0; //
+					}
+					if(i==1){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =0; //
+					}
+					if(i==2){
+						object.position.x =-685; // - 부분 가로줄 위치
+						object.position.y =1031; //
+					}
+					if(i==3){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+					}
+					if(i==4){
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =1031; //
+					}
+					if(i==5){
+						object.position.x =0; // - 부분 가로줄 위치
+						object.position.y =0;//
+					}
+					if(i==6){
+						object.position.x =-685; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+					}
+					if(i==7){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+					}
+					if(i==8){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =1031;//
+					}
+					if(i==9){
+						object.position.x =-2055; // - 부분 가로줄 위치
+						object.position.y =0;//
+					}
+					if(i==10){
+						object.position.x =-2055; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+					}
+					if(i==11){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =1031;//
+					}
+					if(i==12){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =1031; //
+					}
+					if(i==13){
+						object.position.x =-685; // - 부분 가로줄 위치
+						object.position.y =0; //
+					}
+					if(i==14){
+						object.position.x =-2066; // - 부분 가로줄 위치
+						object.position.y =1031;//
+					}
+					if(i==15){
+						object.position.x =0; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+					}
+					if(i==16){
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =0; //
+					}
+					if(i==17){
+						object.position.x =0; // - 부분 가로줄 위치
+						object.position.y =1031;//
+					}
+					if(i==18){
+						
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+					}
+					if(i==19){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+					}
+					if(i==20){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =0;//
+					}
+					
+					
+					targets.dia.push( object );
+				}
+                
+				//b
+				for ( let i = 0; i < 21; i ++ ) {
+					
+					const object = new THREE.Object3D();
+					const randomX= [685,1370,2055,-685,-1370,-2055,0];
+					const randomY=[0, -1031,1031];
+					const px= parseInt(Math.floor(Math.random()*randomX.length),10);
+					const py=parseInt(Math.floor(Math.random()*randomY.length),10);
+					
+					object.position.x =px; // - 부분 가로줄 위치
+					object.position.y =py; // - 부분 세로줄 위치
+
+
+					if(i==0){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =0;//
+						
+					}
+					if(i==1){
+						object.position.y =0; //ition.x =2055; // - 부분 가로줄 위치
+						object.position.y =0; //
+					}
+					if(i==2){
+						object.position.x =-2055; // - 부분 가로줄 위치
+						object.position.y =1031;//
+					}
+					if(i==3){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =0; //
+						
+					}
+					if(i==4){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =0; //
+						//
+					}
+					if(i==5){
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =0;//
+					}
+					if(i==6){
+						object.position.x =-685; // - 부분 가로줄 위치
+						object.position.y =1031; //
+						
+					}
+					if(i==7){
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =1031; 
+						
+						
+					}
+					if(i==8){
+						object.position.x =-685; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+						
+					}
+					if(i==9){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+						
+					}
+					if(i==10){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+						
+					}
+					if(i==11){
+						object.position.x =-2055; // - 부분 가로줄 위치
+						object.position.y =0;//
+						
+					}
+					if(i==12){
+						object.position.x =-1370; // - 부분 가로줄 위치
+						object.position.y =1031;//
+						
+					}
+					if(i==13){
+						object.position.x =-2055; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+						
+					}
+					if(i==14){
+						object.position.x =685; // - 부분 가로줄 위치
+						object.position.y =1031;//
+						
+					}
+					if(i==15){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =1031; //
+						
+					}
+					if(i==16){
+						object.position.x =-685;
+						object.position.y=0; // - 부분 가로줄 위치
+						
+					}
+					if(i==17){
+						object.position.x =0; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+						
+						
+					}
+					if(i==18){
+						
+						object.position.x =2055; // - 부분 가로줄 위치
+						object.position.y =-1031;//
+					}
+					if(i==19){
+						object.position.x =1370; // - 부분 가로줄 위치
+						object.position.y =-1031; //
+					}
+					if(i==20){
+						object.position.x =0; // - 부분 가로줄 위치
+						object.position.y =1031;//
+						
+						
+					}
+					
+					
+					
+					targets.gradient.push( object );
+
+				}
+
+
+
+
+
+
+
+
+				renderer = new CSS3DRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+				//
+
+				controls = new TrackballControls( camera, renderer.domElement );
+				controls.minDistance = 500;
+				controls.maxDistance = 6000;
+				controls.addEventListener( 'change', render );
+
+				const buttonTable = document.getElementById( 'table' );
+				buttonTable.addEventListener( 'click', function () {
+
+					transform( targets.table, 2000 );
+
+				} );
+
+				const buttonSphere = document.getElementById( 'sphere' );
+				buttonSphere.addEventListener( 'click', function () {
+
+					transform( targets.sphere, 2000 );
+
+				} );
+
+				const buttonHelix = document.getElementById( 'helix' );
+				buttonHelix.addEventListener( 'click', function () {
+
+					transform( targets.helix, 2000 );
+
+				} );
+
+				const buttonGrid = document.getElementById( 'grid' );
+				buttonGrid.addEventListener( 'click', function () {
+
+					transform( targets.grid, 2000 );
+
+				} );
+				const buttonDia = document.getElementById( 'dia' );
+				buttonDia.addEventListener( 'click', function () {
+
+					transform( targets.dia, 2000 );
+
+				} );
+				const buttonGradient = document.getElementById( 'gradient' );
+				buttonGradient.addEventListener( 'click', function () {
+
+					transform( targets.gradient, 2000 );
+
+				} );
+
+	
+
+				transform( targets.table, 2000 );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+
+			function transform( targets, duration ) {
+
+				TWEEN.removeAll();
+
+				for ( let i = 0; i < objects.length; i ++ ) {
+
+					const object = objects[ i ];
+					const target = targets[ i ];
+
+					new TWEEN.Tween( object.position )
+						.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+					new TWEEN.Tween( object.rotation )
+						.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+				}
+
+				new TWEEN.Tween( this )
+					.to( {}, duration * 2 )
+					.onUpdate( render )
+					.start();
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				TWEEN.update();
+
+				controls.update();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
+</html>
