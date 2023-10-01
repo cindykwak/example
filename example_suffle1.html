@@ -73,7 +73,6 @@
 		<div id="container"></div>
 		<div id="menu">
 			<button id="table">Original</button>
-			
 			<button id="shuffle">Shuffle</button>
             <button id="saveButton">Save</button>
 			
@@ -328,35 +327,42 @@
 
 				window.addEventListener( 'resize', onWindowResize );
                 
-                function captureAndSaveImage() {
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-
-                    // 렌더러의 DOM 요소를 캔버스에 복사
-                    const rendererElement = renderer.domElement;
-                    const rendererCanvas = rendererElement.cloneNode();
-                    canvas.appendChild(rendererCanvas);
-
-                    // 캔버스에 렌더러 내용 그리기
-                    context.drawImage(rendererCanvas, 0, 0);
-
-                    // 이미지 데이터를 Data URL로 변환
-                    const dataURL = canvas.toDataURL('image/png');
-
-                    // Data URL을 이미지 파일로 다운로드
-                    const a = document.createElement('a');
-                    a.href = dataURL;
-                    a.download = 'shuffled_image.png';
-                    a.click();
-                }
+               
 
                 
 			}
 
             
-            
+            function captureAndSaveImage() {
+				const canvas = document.createElement('canvas');
+				const context = canvas.getContext('2d');
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+
+				// Clone the renderer's DOM element to the canvas
+				const rendererElement = renderer.domElement;
+				const rendererCanvas = rendererElement.cloneNode();
+				canvas.appendChild(rendererCanvas);
+
+				// Draw the renderer content onto the canvas
+				context.drawImage(rendererCanvas, 0, 0);
+
+				// Convert image data to a Data URL
+				const dataURL = canvas.toDataURL('image/png');
+
+				// Create a download link and trigger the download
+				const a = document.createElement('a');
+				a.href = dataURL;
+				a.download = 'shuffled_image.png';
+				a.click();
+			}
+
+        // Add click event listener to the Save button
+        const saveButton = document.getElementById('saveButton');
+        saveButton.addEventListener('click', function () {
+				captureAndSaveImage();
+			});
+
             function shuffleAnimation() {
                 TWEEN.removeAll();
 
@@ -448,35 +454,7 @@
 
 			}
 
-            function captureAndSaveImage() {
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-
-                // 렌더러의 DOM 요소를 캔버스에 복사
-                const rendererElement = renderer.domElement;
-                const rendererCanvas = rendererElement.cloneNode();
-                canvas.appendChild(rendererCanvas);
-
-                // 캔버스에 렌더러 내용 그리기
-                context.drawImage(rendererCanvas, 0, 0);
-
-                // 이미지 데이터를 Data URL로 변환
-                const dataURL = canvas.toDataURL('image/png');
-
-                // Data URL을 이미지 파일로 다운로드
-                const a = document.createElement('a');
-                a.href = dataURL;
-                a.download = 'shuffled_image.png';
-                a.click();
-            }
-
-            // 저장 버튼 클릭 이벤트 핸들러
-            const saveButton = document.getElementById('saveButton');
-            saveButton.addEventListener('click', function () {
-                captureAndSaveImage();
-            });
+            
 		</script>
 	</body>
 </html>
