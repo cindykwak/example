@@ -131,17 +131,7 @@ body {
 }
 
 .index-category-box:nth-child(1){
-  background-image: url(../textures/mold1.png);
-  transition: .5s;
-}
-
-.index-category-box:nth-child(2){
   background-image: url(../texturesv1/mold2.png);
-  transition: .5s;
-}
-
-.index-category-box:nth-child(3){
-  background-image: url(../texturesv2/mold3.png);
   transition: .5s;
 }
 

@@ -73,12 +73,9 @@
 		<div id="container"></div>
 		<div id="menu">
 			<button id="table">Original</button>
-			<button id="sphere">Mix</button>
-			<button id="helix">Transverse</button>
-			<button id="grid">diagonal</button>
-			<button id="dia">Mix</button>
-			<button id="gradient">Mix</button>
-
+			
+			<button id="shuffle">Shuffle</button>
+            <button id="saveButton">Save</button>
 			
 		</div>
 		<div id="menu2">
@@ -108,6 +105,33 @@
 			import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
 			import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 
+            const imageUrls=[
+                "texturesv1/v1_1.png",
+                "texturesv1/v1_2.png",
+                "texturesv1/v1_3.png",
+                "texturesv1/v1_4.png",
+                "texturesv1/v1_5.png",
+                "texturesv1/v1_6.png",
+                "texturesv1/v1_7.png",
+                "texturesv1/v1_8.png",
+                "texturesv1/v1_9.png",
+                "texturesv1/v1_10.png",
+                "texturesv1/v1_11.png",
+                "texturesv1/v1_12.png",
+                "texturesv1/v1_13.png",
+                "texturesv1/v1_14.png",
+                "texturesv1/v1_15.png",
+                "texturesv1/v1_16.png",
+                "texturesv1/v1_17.png",
+                "texturesv1/v1_18.png",
+                "texturesv1/v1_19.png",
+                "texturesv1/v1_20.png",
+                "texturesv1/v1_21.png",
+                "texturesv1/v1_22.png",
+                "texturesv1/v1_23.png",
+                "texturesv1/v1_24.png"
+
+            ]
 			const table = [
 				'','','', 1, 1,
 				'','','', 2,1,
@@ -139,7 +163,7 @@
 			let controls;
 
 			const objects = [];
-			const targets = { table: [], sphere: [], helix: [], grid: [], dia: [], gradient:[]};
+			const targets = { table: []};
 
 			init();
 			animate();
@@ -151,6 +175,8 @@
 				camera.position.z = 2000;
 				
 				scene = new THREE.Scene();
+
+                
 				
 
 				// table
@@ -257,278 +283,19 @@
 
 				
 
-				// sphere
-
-				const vector = new THREE.Vector3();
-
-				for ( let i = 0; i < objects.length; i ++ ) {
-
-					const object = new THREE.Object3D();
-					
-
-					object.position.x = ( ( Math.floor( i *3 ) %7* 685 ) -2080) ;
-					object.position.y = ( ( Math.floor( i  ) % 3 * 1031 )-1100 );
-										
-
-					targets.sphere.push( object );
-					
-					
-
-				}
-				
-				// helix
-
-				for ( let i = 0; i < objects.length; i ++ ) {
-
-					const object = new THREE.Object3D();
-					
-
-					object.position.x = (  ( Math.floor( i  ) %7* 685 ) -2080) ;
-					object.position.y = (  ( Math.floor( i  ) % 3 * 1031 )-1100 );
-
-					targets.helix.push( object );
-					
-					
-				}
-
-				// grid
-
-				for ( let i = 0; i < objects.length; i ++ ) {
-
-					const object = new THREE.Object3D();
-					
-					object.position.x = (  - ( Math.floor( i  ) %7* 685 ) ) +2040;
-					object.position.y = ( - ( Math.floor( i  ) % 3 * 1031 ) ) + 930;
-
-					targets.grid.push( object );
-
-				}
-
-				//
-
-				//dia
-				for ( let i = 0; i < 21; i ++ ) {
-					
-					const object = new THREE.Object3D();
 				
 
-					if(i==0){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =0; //
-					}
-					if(i==1){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =0; //
-					}
-					if(i==2){
-						object.position.x =-685; // - 부분 가로줄 위치
-						object.position.y =1031; //
-					}
-					if(i==3){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-					}
-					if(i==4){
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =1031; //
-					}
-					if(i==5){
-						object.position.x =0; // - 부분 가로줄 위치
-						object.position.y =0;//
-					}
-					if(i==6){
-						object.position.x =-685; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-					}
-					if(i==7){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-					}
-					if(i==8){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =1031;//
-					}
-					if(i==9){
-						object.position.x =-2055; // - 부분 가로줄 위치
-						object.position.y =0;//
-					}
-					if(i==10){
-						object.position.x =-2055; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-					}
-					if(i==11){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =1031;//
-					}
-					if(i==12){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =1031; //
-					}
-					if(i==13){
-						object.position.x =-685; // - 부분 가로줄 위치
-						object.position.y =0; //
-					}
-					if(i==14){
-						object.position.x =-2066; // - 부분 가로줄 위치
-						object.position.y =1031;//
-					}
-					if(i==15){
-						object.position.x =0; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-					}
-					if(i==16){
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =0; //
-					}
-					if(i==17){
-						object.position.x =0; // - 부분 가로줄 위치
-						object.position.y =1031;//
-					}
-					if(i==18){
-						
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-					}
-					if(i==19){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-					}
-					if(i==20){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =0;//
-					}
-					
-					
-					targets.dia.push( object );
-				}
+
+                //shuffle
+                const shuffleButton = document.getElementById('shuffle');
+				shuffleButton.addEventListener('click', function () {
+					// 이미지 위치를 부드럽게 섞는 애니메이션 함수 호출
+                    shuffleAnimation();
+				});
+
+
                 
-				//b
-				for ( let i = 0; i < 21; i ++ ) {
-					
-					const object = new THREE.Object3D();
-					const randomX= [685,1370,2055,-685,-1370,-2055,0];
-					const randomY=[0, -1031,1031];
-					const px= parseInt(Math.floor(Math.random()*randomX.length),10);
-					const py=parseInt(Math.floor(Math.random()*randomY.length),10);
-					
-					object.position.x =px; // - 부분 가로줄 위치
-					object.position.y =py; // - 부분 세로줄 위치
-
-
-					if(i==0){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =0;//
-						
-					}
-					if(i==1){
-						object.position.y =0; //ition.x =2055; // - 부분 가로줄 위치
-						object.position.y =0; //
-					}
-					if(i==2){
-						object.position.x =-2055; // - 부분 가로줄 위치
-						object.position.y =1031;//
-					}
-					if(i==3){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =0; //
-						
-					}
-					if(i==4){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =0; //
-						//
-					}
-					if(i==5){
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =0;//
-					}
-					if(i==6){
-						object.position.x =-685; // - 부분 가로줄 위치
-						object.position.y =1031; //
-						
-					}
-					if(i==7){
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =1031; 
-						
-						
-					}
-					if(i==8){
-						object.position.x =-685; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-						
-					}
-					if(i==9){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-						
-					}
-					if(i==10){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-						
-					}
-					if(i==11){
-						object.position.x =-2055; // - 부분 가로줄 위치
-						object.position.y =0;//
-						
-					}
-					if(i==12){
-						object.position.x =-1370; // - 부분 가로줄 위치
-						object.position.y =1031;//
-						
-					}
-					if(i==13){
-						object.position.x =-2055; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-						
-					}
-					if(i==14){
-						object.position.x =685; // - 부분 가로줄 위치
-						object.position.y =1031;//
-						
-					}
-					if(i==15){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =1031; //
-						
-					}
-					if(i==16){
-						object.position.x =-685;
-						object.position.y=0; // - 부분 가로줄 위치
-						
-					}
-					if(i==17){
-						object.position.x =0; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-						
-						
-					}
-					if(i==18){
-						
-						object.position.x =2055; // - 부분 가로줄 위치
-						object.position.y =-1031;//
-					}
-					if(i==19){
-						object.position.x =1370; // - 부분 가로줄 위치
-						object.position.y =-1031; //
-					}
-					if(i==20){
-						object.position.x =0; // - 부분 가로줄 위치
-						object.position.y =1031;//
-						
-						
-					}
-					
-					
-					
-					targets.gradient.push( object );
-
-				}
-
-
-
-
+                
 
 
 
@@ -551,38 +318,7 @@
 
 				} );
 
-				const buttonSphere = document.getElementById( 'sphere' );
-				buttonSphere.addEventListener( 'click', function () {
-
-					transform( targets.sphere, 2000 );
-
-				} );
-
-				const buttonHelix = document.getElementById( 'helix' );
-				buttonHelix.addEventListener( 'click', function () {
-
-					transform( targets.helix, 2000 );
-
-				} );
-
-				const buttonGrid = document.getElementById( 'grid' );
-				buttonGrid.addEventListener( 'click', function () {
-
-					transform( targets.grid, 2000 );
-
-				} );
-				const buttonDia = document.getElementById( 'dia' );
-				buttonDia.addEventListener( 'click', function () {
-
-					transform( targets.dia, 2000 );
-
-				} );
-				const buttonGradient = document.getElementById( 'gradient' );
-				buttonGradient.addEventListener( 'click', function () {
-
-					transform( targets.gradient, 2000 );
-
-				} );
+				
 
 	
 
@@ -591,9 +327,72 @@
 				//
 
 				window.addEventListener( 'resize', onWindowResize );
+                
+                function captureAndSaveImage() {
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
 
+                    // 렌더러의 DOM 요소를 캔버스에 복사
+                    const rendererElement = renderer.domElement;
+                    const rendererCanvas = rendererElement.cloneNode();
+                    canvas.appendChild(rendererCanvas);
+
+                    // 캔버스에 렌더러 내용 그리기
+                    context.drawImage(rendererCanvas, 0, 0);
+
+                    // 이미지 데이터를 Data URL로 변환
+                    const dataURL = canvas.toDataURL('image/png');
+
+                    // Data URL을 이미지 파일로 다운로드
+                    const a = document.createElement('a');
+                    a.href = dataURL;
+                    a.download = 'shuffled_image.png';
+                    a.click();
+                }
+
+                
 			}
 
+            
+            
+            function shuffleAnimation() {
+                TWEEN.removeAll();
+
+                // 각 이미지의 현재 위치와 새로운 위치를 섞어서 배열에 저장
+                const shuffledTargets = [];
+                const currentIndexes = Array.from({ length: objects.length }, (_, i) => i);
+
+                for (let i = 0; i < objects.length; i++) {
+                    const newIndex = Math.floor(Math.random() * currentIndexes.length);
+                    const currentIndex = currentIndexes.splice(newIndex, 1)[0];
+
+                    shuffledTargets.push(targets.table[currentIndex]);
+                }
+
+                // 각 이미지를 부드럽게 새로운 위치로 이동하는 애니메이션 추가
+                objects.forEach((object, index) => {
+                    const target = shuffledTargets[index];
+
+                    new TWEEN.Tween(object.position)
+                        .to({ x: target.position.x, y: target.position.y, z: target.position.z }, 1000) // 1000ms 동안 부드럽게 이동
+                        .easing(TWEEN.Easing.Exponential.InOut)
+                        .start();
+
+                    new TWEEN.Tween(object.rotation)
+                        .to({ x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, 1000)
+                        .easing(TWEEN.Easing.Exponential.InOut)
+                        .start();
+                });
+
+                // 렌더링 업데이트
+                new TWEEN.Tween(this)
+                    .to({}, 1000)
+                    .onUpdate(render)
+                    .start();
+            }
+            
 			function transform( targets, duration ) {
 
 				TWEEN.removeAll();
@@ -649,6 +448,35 @@
 
 			}
 
+            function captureAndSaveImage() {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                // 렌더러의 DOM 요소를 캔버스에 복사
+                const rendererElement = renderer.domElement;
+                const rendererCanvas = rendererElement.cloneNode();
+                canvas.appendChild(rendererCanvas);
+
+                // 캔버스에 렌더러 내용 그리기
+                context.drawImage(rendererCanvas, 0, 0);
+
+                // 이미지 데이터를 Data URL로 변환
+                const dataURL = canvas.toDataURL('image/png');
+
+                // Data URL을 이미지 파일로 다운로드
+                const a = document.createElement('a');
+                a.href = dataURL;
+                a.download = 'shuffled_image.png';
+                a.click();
+            }
+
+            // 저장 버튼 클릭 이벤트 핸들러
+            const saveButton = document.getElementById('saveButton');
+            saveButton.addEventListener('click', function () {
+                captureAndSaveImage();
+            });
 		</script>
 	</body>
 </html>

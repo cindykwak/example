@@ -76,6 +76,7 @@
 			<button id="sphere">Petal</button>
 			<button id="helix">Surface</button>
 			<button id="grid">Sphere</button>
+			<button id="shuffle">Shuffle</button>
 			
 
 			
@@ -199,7 +200,7 @@
 			let controls;
 
 			const objects = [];
-			const targets = { table: [], sphere: [], helix: [], grid: [], dia: [], gradient:[]};
+			const targets = { table: [], sphere: [], helix: [], grid: [], dia: [], gradient:[], shuffle: [] };
 
 			init();
 			animate();
@@ -297,6 +298,9 @@
                     
 					
 
+
+					
+
 					//코드가이게맞나... 너무더러움
 
 					//objectCSS.element.style.backgroundImage = 'url("textures/tarot_back.jpg")'
@@ -336,6 +340,28 @@
 					
 
 				}
+
+				document.addEventListener('DOMContentLoaded', function () {
+    // 이전 코드...
+
+						const shuffleButton = document.getElementById('shuffle');
+
+						// 셔플 버튼 클릭 시 호출되는 함수
+						shuffleButton.addEventListener('click', function () {
+							shuffle(cards); // 이미지 배열을 섞음
+							cards.forEach((card, index) => {
+								card.src = `images/image${index + 1}.jpg`; // 이미지 재배치
+							});
+						});
+
+						// 이미지 배열을 섞는 함수
+						function shuffle(array) {
+							for (let i = array.length - 1; i > 0; i--) {
+								const j = Math.floor(Math.random() * (i + 1));
+								[array[i], array[j]] = [array[j], array[i]];
+							}
+						}
+					});
 				
 				// helix
 
