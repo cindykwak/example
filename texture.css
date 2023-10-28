@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin: 20px;
+}
+
+#clothing {
+    max-width: 100%;
+    height: auto;
+}
+
+#applyTexture {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
