@@ -28,7 +28,7 @@
 
 
 			let camera, scene, renderer;
-			let mesh;
+			let mesh, mesh2, mesh3, mesh4, mesh5;
 
 			init();
 			animate();
@@ -36,22 +36,40 @@
 			function init() {
 
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 100 );
-				camera.position.z = 8;
+				camera.position.z = 10;
 
 				scene = new THREE.Scene();
 
 				scene.background = new THREE.Color(0x181818);
 				
-			
-
-				const texture = new THREE.TextureLoader().load( 'main1.png' );
+				
+				const texture = new THREE.TextureLoader().load( 'main2.png' );
 				texture.colorSpace = THREE.SRGBColorSpace;
 
-				const geometry = new THREE.BoxGeometry(5,5,0.1);
-				const material = new THREE.MeshBasicMaterial( { map: texture } );
-
-				mesh = new THREE.Mesh( geometry, material );
+				const geometry = new THREE.BoxGeometry(2,4,2);
+			
+				mesh = new THREE.Mesh( geometry );
 				scene.add( mesh );
+
+				const geometry2 = new THREE.BoxGeometry(2,5,2);
+				mesh2 = new THREE.Mesh( geometry2 );
+				mesh2.position.x=3;
+				mesh2.position.y=2;
+				scene.add( mesh2 );
+				const geometry3 = new THREE.BoxGeometry(2,6,2);
+				mesh3 = new THREE.Mesh( geometry3 );
+				mesh3.position.x=-3;
+				mesh3.position.y=-2.5;
+				scene.add( mesh3 );
+				const geometry4 = new THREE.BoxGeometry(2,3,2);
+				mesh4 = new THREE.Mesh( geometry4 );
+				mesh4.position.x=-6;
+	
+				scene.add( mesh4 );
+				const geometry5 = new THREE.BoxGeometry(2,7,2);
+				mesh5 = new THREE.Mesh( geometry5 );
+				mesh5.position.x=6;
+				scene.add( mesh5 );
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -79,6 +97,10 @@
 
 				
 				mesh.rotation.y += 0.004;
+				mesh2.rotation.y += -0.007;
+				mesh3.rotation.y += 0.004;
+				mesh4.rotation.y += -0.009;
+				mesh5.rotation.y += 0.01;
 
 				renderer.render( scene, camera );
 
