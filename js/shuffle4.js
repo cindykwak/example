@@ -15,28 +15,9 @@ import * as THREE from 'three';
 				'','','', 7,1,
 				'','','', 8,1,
 				'','','', 9,1,
-				'','','', 10,1,
-				'','','', 11,1,
-				'','','', 12,1,
-				'','','', 13,1,
-				'','','', 14,1,
-				'','','', 15,1,
+				
 
-				'','','', 0.5,1.75,
-				'','','', 1.5,1.75,
-				'','','', 2.5,1.75,
-				'','','', 3.5,1.75,
-				'','','', 4.5,1.75,
-				'','','', 5.5,1.75,
-				'','','', 6.5,1.75,
-				'','','', 7.5,1.75,
-				'','','', 8.5,1.75,
-				'','','', 9.5,1.75,
-				'','','', 10.5,1.75,
-				'','','', 11.5,1.75,
-				'','','', 12.5,1.75,
-				'','','', 13.5,1.75,
-				'','','', 14.5,1.75,
+			
 				
 				'','','', 1,2.5,
 				'','','', 2,2.5,
@@ -55,21 +36,7 @@ import * as THREE from 'three';
 				'','','', 15,2.5,
 
 				
-				'','','', 0.5,3.25,
-				'','','', 1.5,3.25,
-				'','','', 2.5,3.25,
-				'','','', 3.5,3.25,
-				'','','', 4.5,3.25,
-				'','','', 5.5,3.25,
-				'','','', 6.5,3.25,
-				'','','', 7.5,3.25,
-				'','','', 8.5,3.25,
-				'','','', 9.5,3.25,
-				'','','', 10.5,3.25,
-				'','','', 11.5,3.25,
-				'','','', 12.5,3.25,
-				'','','', 13.5,3.25,
-				'','','', 14.5,3.25,
+				
 
 				'','','', 1,4,
 				'','','', 2,4,
@@ -133,232 +100,232 @@ import * as THREE from 'three';
 					//objectCSS.position.z = Math.random() * 4000 - 2000;
 					
 					if(i==0){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
 						
 					}
 					if(i==5){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
 					}
 					if(i==10){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
 					}
 					if(i==15){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
 					}
 					if(i==20){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
 					}
 					if(i==25){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/6.png")';
 					}
 					if(i==30){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/7.png")';
 					}
 					if(i==35){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/8.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/8.png")';
 					}
 					if(i==40){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/7.png")';
 					}
 					if(i==45){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/6.png")';
 					}
 					if(i==50){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
 					}
 					if(i==55){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
 					}
 					if(i==60){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
 					}
 					if(i==65){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
 					}
 					if(i==70){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
 					}
 					if(i==75){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
 					}
 					if(i==80){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
 					}
 					if(i==85){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
 					}
 					if(i==90){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
 					}
 					if(i==95){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
 					}
 					if(i==100){
-						objectCSS.element.style.backgroundImage = 'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/6.png")';
 					}
 					if(i==105){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==110){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/8.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
 					}
 					if(i==115){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==120){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==125){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==130){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==135){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==140){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==145){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==150){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==155){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==160){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==165){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==170){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					
 					if(i==175){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==180){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==185){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/8.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
 					}
 					if(i==190){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==195){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==200){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==205){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==210){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==215){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==220){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==225){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==230){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==235){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==240){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==245){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==250){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==255){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==260){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/8.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
 					}
 					if(i==265){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==270){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==275){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==280){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==285){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==290){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==295){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					
 					if(i==300){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==305){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==310){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==315){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==320){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==325){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==330){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==335){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/8.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
 					}
 					if(i==340){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==345){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==350){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
 					}
 					if(i==355){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==360){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					if(i==365){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==370){
-						objectCSS.element.style.backgroundImage =  'url("texturesv3/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 
 					//코드가이게맞나... 너무더러움
@@ -374,8 +341,8 @@ import * as THREE from 'three';
 
 					const object = new THREE.Object3D();
 				
-					object.position.x = ( table[ i + 3 ] * 191) - 1500; // - 부분 가로줄 위치
-					object.position.y = - ( table[ i + 4 ] * 221 ) + 600; // - 부분 세로줄 위치
+					object.position.x = ( table[ i + 3 ] * 250) - 1500; // - 부분 가로줄 위치
+					object.position.y = - ( table[ i + 4 ] *400 ) + 600; // - 부분 세로줄 위치
 
 					targets.table.push( object );
 

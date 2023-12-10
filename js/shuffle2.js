@@ -363,8 +363,8 @@ function init() {
 
         const object = new THREE.Object3D();
     
-        object.position.x = ( table[ i + 3 ] * 140 ) - 900; // - 부분 가로줄 위치
-        object.position.y = - ( table[ i + 4 ] * 140 ) + 500; // - 부분 세로줄 위치
+        object.position.x = ( table[ i + 3 ] * 143 ) - 900; // - 부분 가로줄 위치
+        object.position.y = - ( table[ i + 4 ] * 143 ) + 500; // - 부분 세로줄 위치
 
         targets.table.push( object );
 
