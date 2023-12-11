@@ -8,7 +8,9 @@
 		<link type="text/css" rel="stylesheet" href="main.css">
 		<link href="css/styles.css" rel="stylesheet" />
         <link href="css/shuffle3.css" rel="stylesheet" />
-	
+		<script>
+			var audio = new Audio('button-press.ogg')
+		</script>
 	</head>
 	<body>
 
@@ -16,16 +18,14 @@
 		<div id="info">Pattern Graphic Design</div>
 		<div id="container"></div>
 		<div id="menu">
-			<button id="table">Original</button>
-			<button id="shuffle">Shuffle</button>
-            <button id="saveButton">Save</button>
-			
+			<button id="table" onclick="audio.play()" value="play">Original</button>
+			<button id="shuffle" onclick="audio.play()" value="play">Shuffle</button>
+        
 		</div>
 		<div id="menu2">
-			<button id="home"><a href="shuffle2.html">Kick</a></button>
-	
-			
+			<button id="home"  class="home"><a href="shuffle2.html">Kick</a></button>
 		</div>
+		<audio id="home"  onclick="audio.play()" value="play"></audio>
 
 
 		<!-- Import maps polyfill -->

@@ -13,30 +13,25 @@ import * as THREE from 'three';
 				'','','', 5,1,
 				'','','', 6,1,
 				'','','', 7,1,
-				'','','', 8,1,
-				'','','', 9,1,
+				
+				
+				'','','', 1,2,
+				'','','', 2,2,
+				'','','', 3,2,
+				'','','', 4,2,
+				'','','', 5,2,
+				'','','', 6,2,
+				'','','', 7,2,
 				
 
+				'','','', 1,3,
+				'','','', 2,3,
+				'','','', 3,3,
+				'','','', 4,3,
+				'','','', 5,3,
+				'','','', 6,3,
+				'','','', 7,3,
 			
-				
-				'','','', 1,2.5,
-				'','','', 2,2.5,
-				'','','', 3,2.5,
-				'','','', 4,2.5,
-				'','','', 5,2.5,
-				'','','', 6,2.5,
-				'','','', 7,2.5,
-				'','','', 8,2.5,
-				'','','', 9,2.5,
-				'','','', 10,2.5,
-				'','','', 11,2.5,
-				'','','', 12,2.5,
-				'','','', 13,2.5,
-				'','','', 14,2.5,
-				'','','', 15,2.5,
-
-				
-				
 
 				'','','', 1,4,
 				'','','', 2,4,
@@ -45,17 +40,15 @@ import * as THREE from 'three';
 				'','','', 5,4,
 				'','','', 6,4,
 				'','','', 7,4,
-				'','','', 8,4,
-				'','','', 9,4,
-				'','','', 10,4,
-				'','','', 11,4,
-				'','','', 12,4,
-				'','','', 13,4,
-				'','','', 14,4,
-				'','','', 15,4,
-
-				
 			
+				'','','', 1,5,
+				'','','', 2,5,
+				'','','', 3,5,
+				'','','', 4,5,
+				'','','', 5,5,
+				'','','', 6,5,
+				'','','', 7,5,
+	
 			];
 
 
@@ -74,8 +67,8 @@ import * as THREE from 'three';
 			function init() {
 
 				
-				camera = new THREE.PerspectiveCamera( 2970, window.innerWidth / window.innerHeight, 1, 100 );
-				camera.position.z = 1000;
+				camera = new THREE.PerspectiveCamera( 3000, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.z = 700;
 				
 				scene = new THREE.Scene();
 
@@ -125,209 +118,90 @@ import * as THREE from 'three';
 						objectCSS.element.style.backgroundImage = 'url("texturesv4/8.png")';
 					}
 					if(i==40){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/7.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/9.png")';
 					}
 					if(i==45){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/6.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/10.png")';
 					}
 					if(i==50){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/11.png")';
 					}
 					if(i==55){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/12.png")';
 					}
 					if(i==60){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/13.png")';
 					}
 					if(i==65){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
-					}
-					if(i==70){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
-					}
-					if(i==75){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
-					}
-					if(i==80){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
-					}
-					if(i==85){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
-					}
-					if(i==90){
 						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
 					}
+					if(i==70){
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/15.png")';
+					}
+					if(i==75){
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/16.png")';
+					}
+					if(i==80){
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/1.png")';
+					}
+					if(i==85){
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/2.png")';
+					}
+					if(i==90){
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/3.png")';
+					}
 					if(i==95){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/4.png")';
 					}
 					if(i==100){
-						objectCSS.element.style.backgroundImage = 'url("texturesv4/6.png")';
+						objectCSS.element.style.backgroundImage = 'url("texturesv4/5.png")';
 					}
 					if(i==105){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
 					}
 					if(i==110){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
 					}
 					if(i==115){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
 					}
 					if(i==120){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/9.png")';
 					}
 					if(i==125){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/10.png")';
 					}
 					if(i==130){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/11.png")';
 					}
 					if(i==135){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/12.png")';
 					}
 					if(i==140){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/13.png")';
 					}
 					if(i==145){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/14.png")';
 					}
 					if(i==150){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/15.png")';
 					}
 					if(i==155){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
 					}
 					if(i==160){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
 					}
 					if(i==165){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
 					}
 					if(i==170){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
+						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
 					}
 					
-					if(i==175){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==180){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==185){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
-					}
-					if(i==190){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==195){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==200){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
-					}
-					if(i==205){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
-					}
-					if(i==210){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
-					}
-					if(i==215){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
-					}
-					if(i==220){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
-					}
-					if(i==225){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
-					}
-					if(i==230){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
-					}
-					if(i==235){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
-					}
-					if(i==240){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
-					}
-					if(i==245){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
-					}
-					if(i==250){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==255){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==260){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
-					}
-					if(i==265){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==270){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==275){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
-					}
-					if(i==280){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
-					}
-					if(i==285){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
-					}
-					if(i==290){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
-					}
-					if(i==295){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
-					}
 					
-					if(i==300){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
-					}
-					if(i==305){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
-					}
-					if(i==310){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
-					}
-					if(i==315){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
-					}
-					if(i==320){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
-					}
-					if(i==325){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==330){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==335){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/8.png")';
-					}
-					if(i==340){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/7.png")';
-					}
-					if(i==345){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/6.png")';
-					}
-					if(i==350){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/5.png")';
-					}
-					if(i==355){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/4.png")';
-					}
-					if(i==360){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/3.png")';
-					}
-					if(i==365){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/2.png")';
-					}
-					if(i==370){
-						objectCSS.element.style.backgroundImage =  'url("texturesv4/1.png")';
-					}
-
+					
+					
 					//코드가이게맞나... 너무더러움
 
 					//objectCSS.element.style.backgroundImage = 'url("textures/tarot_back.jpg")'
@@ -341,8 +215,8 @@ import * as THREE from 'three';
 
 					const object = new THREE.Object3D();
 				
-					object.position.x = ( table[ i + 3 ] * 250) - 1500; // - 부분 가로줄 위치
-					object.position.y = - ( table[ i + 4 ] *400 ) + 600; // - 부분 세로줄 위치
+					object.position.x = ( table[ i + 3 ] * 470) - 1900; // - 부분 가로줄 위치
+					object.position.y = - ( table[ i + 4 ] * 318) + 950; // - 부분 세로줄 위치
 
 					targets.table.push( object );
 
@@ -359,14 +233,6 @@ import * as THREE from 'three';
 					// 이미지 위치를 부드럽게 섞는 애니메이션 함수 호출
                     shuffleAnimation();
 				});
-
-
-                
-                // Add click event listener to the Save button
-				const saveButton = document.getElementById('saveButton');
-				saveButton.addEventListener('click', function () {
-						captureAndSaveImage();
-					});
 
 
 
@@ -410,20 +276,6 @@ import * as THREE from 'three';
                 
 			}
 
-            function captureAndSaveImage() {
-				// HTML2Canvas를 사용하여 웹 페이지를 캡처하고 이미지로 저장
-				html2canvas(document.querySelector("#container")).then(function (canvas) {
-					// 캡처된 이미지를 생성합니다.
-					var capturedImage = canvas.toDataURL("image/png");
-
-					// 이미지를 저장하거나 표시할 수 있습니다.
-					var link = document.createElement("a");
-					link.href = capturedImage;
-					link.download = "captured_image.png"; // 다운로드할 이미지 파일 이름
-					link.click();
-				});
-			}
-        
 
 			function addStar(){
 				const geometry = new THREE.SphereGeometry(0.01);

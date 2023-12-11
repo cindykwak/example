@@ -171,14 +171,6 @@ function init() {
 
 
 	
-	// Add click event listener to the Save button
-	const saveButton = document.getElementById('saveButton');
-	saveButton.addEventListener('click', function () {
-			captureAndSaveImage();
-		});
-
-
-
 
 
 	Array(4000).fill().forEach(addStar)
@@ -219,19 +211,7 @@ function init() {
 	
 }
 
-function captureAndSaveImage() {
-	// HTML2Canvas를 사용하여 웹 페이지를 캡처하고 이미지로 저장
-	html2canvas(document.querySelector("#container")).then(function (canvas) {
-		// 캡처된 이미지를 생성합니다.
-		var capturedImage = canvas.toDataURL("image/png");
 
-		// 이미지를 저장하거나 표시할 수 있습니다.
-		var link = document.createElement("a");
-		link.href = capturedImage;
-		link.download = "captured_image.png"; // 다운로드할 이미지 파일 이름
-		link.click();
-	});
-}
 
 
 function addStar(){
